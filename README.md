@@ -8,7 +8,7 @@ To learn MEAN development
  ```
  $ brew install npm
  ```
- 2. Install Node version switcher
+2. Install Node version switcher
  ```
  $ npm install -g n
  ```
