@@ -1,20 +1,13 @@
 var express = require('express')
 var bodyParser = require('body-parser')
-var Post = require('./models/post')
-
-// var Post = require('./controllers/api/posts')(app)
-
 
 var app = express()
+app.use(bodyParser.json());
 
-app.use(bodyParser.json())
-app.use(require('./controllers/api/posts'));
+app.use('/api/posts', require('./controllers/api/posts'));
+app.use( require('./controllers/static'));
+// app.use('/', require('./controllers/static'));
 
-// Delivers layout file
-
-app.get('/', function (req, res) {
-	res.sendfile('layouts/posts.html')
-});
 
 app.listen(3000, function () {
 	console.log('Server listening on', 3000)
